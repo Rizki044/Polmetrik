@@ -75,7 +75,7 @@ describe('example to-do app', () => {
 
     it('can delete all completed tasks', () => {
       cy.contains('Clear completed').click()
-      cy.get('.action.action-delete')
+      cy.get('.todo-list li')
         .should('have.length', 1)
         .should('not.have.text', 'Pay electric bill')
       // Finally, make sure that the clear button no longer exists.
