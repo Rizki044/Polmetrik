@@ -30,6 +30,7 @@ it('Verify Failed Login Wrong Password', () => {
     cy.get('#pass').type('tina2024')
     cy.get('.action.login.primary').click()
 
+    
     cy.get('.message-error').should('be.visible')
 })
 
