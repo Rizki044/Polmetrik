@@ -2,44 +2,48 @@ describe('Login Functionality', () => {
   beforeEach(() => {
       cy.visit('https://app.polmetrik.id/')
 })
+const username='.css-1wpyscx'
+const password='.css-7lq7et'
+const button='.css-1ce0nau'
+const message='.css-1u4yi1p'
 
   it('Verify Failed Login invalid email address', () => {
-      cy.get('[:rc:-label]').type('wakidah@')
-      cy.get('#Kata.Sandi').type('Tina2024')
-      cy.get('.action.login.primary').click()
+      cy.get(username).type('wakidah@')
+      cy.get(password).type('Tina2024')
+      cy.get(button).click()
 
-      cy.get('#email-error').should('be.visible')
+      cy.get(message).should('be.visible')
   })
 
 it('Verify Failed Login Without email address', () => {
-    cy.get('#pass').type('Tina2024')
-    cy.get('.action.login.primary').click()
+    cy.get('.css-7lq7et').type('Tina2024')
+    cy.get(button).click()
 
-    cy.get('.message-error').should('be.visible')
+    cy.get('.css-1u4yi1p').should('be.visible')
 })
 
 it('Verify Failed Login Without password', () => {
-    cy.get('#email').type('wakidah@binokular.net')
-    cy.get('.action.login.primary').click()
+    cy.get(username).type('wakidah@binokular.net')
+    cy.get(button).click()
 
-    cy.get('.message-error').should('be.visible')
+    cy.get('.css-1u4yi1p').should('be.visible')
 })
 
 it('Verify Failed Login Wrong Password', () => {
-    cy.get('#email').type('wakidah@binokular.net')
-    cy.get('#pass').type('tina2024')
-    cy.get('.action.login.primary').click()
+    cy.get(username).type('wakidah@binokular.net')
+    cy.get(password).type('tina2024')
+    cy.get(button).click()
 
     
-    cy.get('.message-error').should('be.visible')
+    cy.get('.css-1u4yi1p').should('be.visible')
 })
 
-it('Verify Success Login', () => {
-    cy.get(':r0:-label').type('wakidah@binokular.net')
-    cy.get('#KataSandi').type('Tina2024')
-    cy.get('.action.login.primary').click()
+it.only('Verify Success Login', () => {
+    cy.get(username).type('wakidah@binokular.net')
+    cy.get(password).type('Tina2024')
+    cy.get(button).click()
 
 
-    cy.url().should('include', '/customer/account/')
+    cy.get('.css-6ct1tc > .MuiTypography-root', {timeout:30000}).contains('Dashboard')
 })
 })
