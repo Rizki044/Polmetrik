@@ -38,7 +38,7 @@ it('Verify Failed Login Wrong Password', () => {
     cy.get('.css-1u4yi1p').should('be.visible')
 })
 
-it.only('Verify Success Login', () => {
+it('Verify Success Login', () => {
     cy.get(username).type('wakidah@binokular.net')
     cy.get(password).type('Tina2024')
     cy.get(button).click()
