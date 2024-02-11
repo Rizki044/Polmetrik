@@ -17,9 +17,10 @@ describe("SearchFunctionality", () => {
     cy.get('input[name="last_name"]').type('Wulan');
     cy.get('.css-31avos', {timeout:30000} ).click();
 
-    cy.url().should("include", "/customer/account");
+    cy.get('a > .MuiTypography-root').click();
     // cy.get('.column > .message').should('be.visible')
   });
+
 
   it("Change email success", () => {
     cy.get().click();
@@ -32,7 +33,7 @@ describe("SearchFunctionality", () => {
     // cy.get('.column > .message').should('be.visible')
   });
 
-  it.only("Failed Change password with no special character", () => {
+  it("Failed Change password with no special character", () => {
     cy.get().click();
     cy.get("#change-password").click();
     cy.get("#current-password").type("");
@@ -63,7 +64,7 @@ describe("SearchFunctionality", () => {
     cy.get("#current-password").type("");
     cy.get("#form-validate > .actions-toolbar > div.primary > .action").click();
 
-    cy.url().should("include", "/customer/account");
+    cy.get('.css-6ct1tc > .MuiTypography-root', {timeout:30000}).contains('Dashboard');
     // cy.get('.column > .message').should('be.visible')
   });
 });

@@ -19,9 +19,7 @@ Cypress.Commands.add("login", () => {
   cy.get(password).type("Tina2024");
   cy.get(button).click();
 
-  cy.get(".css-6ct1tc > .MuiTypography-root", { timeout: 30000 }).contains(
-    "Dashboard"
-  );
+  cy.get(".css-6ct1tc > .MuiTypography-root", { timeout: 30000 }).contains("Dashboard");
 });
 
 //

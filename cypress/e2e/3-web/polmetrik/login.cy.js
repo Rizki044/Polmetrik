@@ -45,5 +45,5 @@ it('Verify Success Login', () => {
 
 
     cy.get('.css-6ct1tc > .MuiTypography-root', {timeout:30000}).contains('Dashboard')
-})
+});
 })
