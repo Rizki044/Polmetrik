@@ -1,0 +1,11 @@
+// const { before } = require("lodash");
+
+import { before, describe } from "node:test";
+
+import("../../../support/commands.js");
+
+describe("SearchFunctionally", () => {
+    before(() => {
+        cy.login();
+    });
+})
