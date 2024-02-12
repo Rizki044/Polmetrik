@@ -7,7 +7,7 @@ describe("SearchFunctionality", () => {
     cy.login();
   });
 
-  it.only("Change first name and last name success", () => {
+  it("Change first name and last name success", () => {
     cy.get('.css-1ogihpd').click();
     cy.get('[tabindex="0"] > .MuiButtonBase-root').click();
     cy.get('.MuiGrid-container > :nth-child(2) > .MuiButtonBase-root').click();
@@ -22,7 +22,7 @@ describe("SearchFunctionality", () => {
   });
 
 
-  it("Change email success", () => {
+  it.only("Change email success", () => {
     cy.get().click();
     cy.get("#change-email").click();
     cy.get("#email").clear().type("");
