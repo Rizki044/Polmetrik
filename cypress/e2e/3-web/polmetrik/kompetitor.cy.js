@@ -4,4 +4,4 @@ describe('SearchFunctionality', () => {
     beforeEach(() => {
         cy.login()
     });
-
+})
