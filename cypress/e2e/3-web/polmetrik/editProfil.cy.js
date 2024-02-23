@@ -1,5 +1,3 @@
-// const { before } = require("lodash");
-
 import("../../../support/commands.js");
 
 describe("SearchFunctionality", () => {
@@ -7,7 +5,7 @@ describe("SearchFunctionality", () => {
     cy.login();
   });
 
-  it("Change first name and last name success", () => {
+  it.only("Change first name and last name success", () => {
     cy.get('.css-1ogihpd').click();
     cy.get('[tabindex="0"] > .MuiButtonBase-root').click();
     cy.get('.MuiGrid-container > :nth-child(2) > .MuiButtonBase-root').click();
@@ -22,7 +20,7 @@ describe("SearchFunctionality", () => {
   });
 
 
-  it.only("Change email success", () => {
+  it("Change email success", () => {
     cy.get().click();
     cy.get("#change-email").click();
     cy.get("#email").clear().type("");
