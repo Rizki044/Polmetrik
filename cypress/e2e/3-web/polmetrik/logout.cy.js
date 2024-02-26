@@ -6,11 +6,11 @@ describe("SearchFunctionality", () => {
   before(() => {
     cy.login();
   });
-})
 
-it.only("Verify Success Logout", () => {
-    cy.get('.css-9iedg7').click();
-    cy.get('[tabindex="-1"] > .role="menuitem"').click();
+
+it("Verify Success Logout", () => {
+  cy.get('.css-1ogihpd').click();
+  cy.get('[href="/logout"] > .MuiButtonBase-root > .MuiTypography-root').click ();
+  });
 });
-
 
