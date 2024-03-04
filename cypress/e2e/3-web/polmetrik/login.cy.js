@@ -11,39 +11,36 @@ const message='.css-1u4yi1p'
       cy.get(username).type('wakidah@')
       cy.get(password).type('Tina2024')
       cy.get(button).click()
-
       cy.get(message).should('be.visible')
+      cy.wait(1000)
   })
 
 it('Verify Failed Login Without email address', () => {
     cy.get('.css-7lq7et').type('Tina2024')
     cy.get(button).click()
-
     cy.get('.css-1u4yi1p').should('be.visible')
+    cy.wait(1000)
 })
 
 it('Verify Failed Login Without password', () => {
     cy.get(username).type('wakidah@binokular.net')
     cy.get(button).click()
-
     cy.get('.css-1u4yi1p').should('be.visible')
+    cy.wait(1000)
 })
 
 it('Verify Failed Login Wrong Password', () => {
     cy.get(username).type('wakidah@binokular.net')
     cy.get(password).type('tina2024')
     cy.get(button).click()
-
-    
     cy.get('.css-1u4yi1p').should('be.visible')
+    cy.wait(1000)
 })
 
 it('Verify Success Login', () => {
     cy.get(username).type('wakidah@binokular.net')
     cy.get(password).type('Tina2024')
     cy.get(button).click()
-
-
     cy.get('.css-6ct1tc > .MuiTypography-root', {timeout:30000}).contains('Dashboard');
-});
+    });
 })
