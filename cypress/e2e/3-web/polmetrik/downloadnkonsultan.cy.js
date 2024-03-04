@@ -14,7 +14,6 @@ it("Download dan Konsultan", () => {
     cy.wait(500)
     cy.get('.MuiAutocomplete-endAdornment').type("analisadaily.com").click()
     cy.wait(500)
-    //
     cy.get(':nth-child(5) > .css-17lfqzq').click()
     cy.wait(500)
     cy.get('.css-16h4pan > .MuiButtonBase-root').click()
